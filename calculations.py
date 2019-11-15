@@ -1,4 +1,4 @@
-# a simple calculater that only adds up 2 numbers
+# a simple calculator that only adds up 2 numbers
 
 print("welcome, please enter a number")
 number_1 =  int(input ())
