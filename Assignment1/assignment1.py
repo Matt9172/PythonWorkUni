@@ -5,15 +5,22 @@ __version__ = "28/11/2019"
 
 print("Speed Camera Interface")
 vehicle_type = []
-vehicle_speed = []
+vehicle_speed = ()
 count = 1
 
 while 1:
     reading = input("Input type of vehicle and speed e.g. H30 or C15").upper()
-    if reading[0] in ("H", "L", "C",):
+    if reading in "END":
+        break
+    elif reading[0] in ("H", "L", "C",):
         vehicle_type.append(reading[0])
         print(vehicle_type)
-    #if reading[1:3]
+    vehicle_speed += (reading[1:3],)
+    print (vehicle_speed)
+
+#elif reading[1:3] in int:
+        #vehicle_speed.append(reading[1:3])
+       # print(vehicle_speed)
 
 
    ## max = max(vehicle_speed)
