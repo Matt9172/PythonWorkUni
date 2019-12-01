@@ -20,8 +20,8 @@ while 1:
         if reading_number > 50:
             speed_limit_violations += (reading_number,)
 
-    if reading in "END".upper():
-        break
+        if reading in "END".upper():
+            break
     else:
         print("Please only enter data that starts with a H, L or C and has a two digit number afterwards e.g H30")
 
