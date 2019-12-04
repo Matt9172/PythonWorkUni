@@ -8,6 +8,7 @@ vehicle_type = ()
 vehicle_speed = ()
 count = 1
 speed_limit_violations = ()
+
 while 1:
     reading = str(input("Input type of vehicle and speed e.g. H30 or C15: ").upper())
 
@@ -20,8 +21,8 @@ while 1:
         if reading_number > 50:
             speed_limit_violations += (reading_number,)
 
-        if reading in "END".upper():
-            break
+    elif reading in "END".upper():
+        break
     else:
         print("Please only enter data that starts with a H, L or C and has a two digit number afterwards e.g H30")
 
@@ -30,13 +31,13 @@ highest_speed = max(vehicle_speed)
 lowest_speed = min(vehicle_speed)
 avg_speed = sum(vehicle_speed) / len(vehicle_speed)
 speed_limit_percentage = ('{0:.2f}%'.format((len(speed_limit_violations) / len(vehicle_speed) * 100)))
-heavy_goods_percent = ('{0:.2f}%'.format(( / len(vehicle_speed) * 100)))
-light_goods_percent = ('{0:.2f}%'.format((len(speed_limit_violations) / len(vehicle_speed) * 100)))
-car_percent = ('{0:.2f}%'.format((len(speed_limit_violations) / len(vehicle_speed) * 100)))
+heavy_goods_percent = ('{0:.2f}%'.format((vehicle_type.count("H") / len(vehicle_speed) * 100)))
+light_goods_percent = ('{0:.2f}%'.format((vehicle_type.count("L") / len(vehicle_speed) * 100)))
+car_percent = ('{0:.2f}%'.format((vehicle_type.count("C") / len(vehicle_speed) * 100)))
 print("Number of vehicles: ", no_of_vehicles)
-print("Number of Heavy Goods: ", )
-print("Number of Light Goods: ", )
-print("Number of Cars: ", )
+print("Number of Heavy Goods: ", vehicle_type.count("H"), "", heavy_goods_percent)
+print("Number of Light Goods: ", light_goods_percent)
+print("Number of Cars: ", car_percent)
 print("Highest speed: ", highest_speed, "mph")
 print("Lowest speed: ", lowest_speed, "mph")
 print("Average speed: ", round(avg_speed, 1), "mph")
