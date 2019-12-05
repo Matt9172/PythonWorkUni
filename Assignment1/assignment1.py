@@ -34,12 +34,15 @@ speed_limit_percentage = ('{0:.2f}%'.format((len(speed_limit_violations) / len(v
 heavy_goods_percent = ('{0:.2f}%'.format((vehicle_type.count("H") / len(vehicle_speed) * 100)))
 light_goods_percent = ('{0:.2f}%'.format((vehicle_type.count("L") / len(vehicle_speed) * 100)))
 car_percent = ('{0:.2f}%'.format((vehicle_type.count("C") / len(vehicle_speed) * 100)))
+
+
 print("Number of vehicles: ", no_of_vehicles)
 print("Number of Heavy Goods: ", vehicle_type.count("H"), "", heavy_goods_percent)
-print("Number of Light Goods: ", light_goods_percent)
-print("Number of Cars: ", car_percent)
-print("Highest speed: ", highest_speed, "mph")
-print("Lowest speed: ", lowest_speed, "mph")
-print("Average speed: ", round(avg_speed, 1), "mph")
+print("Number of Light Goods: ", vehicle_type.count("L"), "", light_goods_percent)
+print("Number of Cars: ", "", vehicle_type.count("C"), car_percent)
+
+print("Highest speed: ", highest_speed, "MPH", "", (round(highest_speed * 1.609)), "KPH")
+print("Lowest speed: ", lowest_speed, "MPH", "", (round(lowest_speed * 1.609)), "KPH")
+print("Average speed: ", round(avg_speed), "MPH", "", (round(avg_speed * 1.609)), "KPH")
 
 print("Speed Limit Violations:", len(speed_limit_violations), '(', speed_limit_percentage, ')')
