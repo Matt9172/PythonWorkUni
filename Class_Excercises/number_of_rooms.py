@@ -16,3 +16,4 @@ try:
             print("You will need", number_of_rooms, "rooms")
 except ValueError:
     print("Please enter a whole number")
+
